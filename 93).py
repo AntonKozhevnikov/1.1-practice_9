@@ -10,8 +10,8 @@ def binary_search_recursion(lst, val):
     mid = (left + right) // 2
     if (val == lst[mid]):
         return mid + 1
-    if (val > lst[mid]):
+    elif (val > lst[mid]):
         return binary_search_recursion(lst[mid + 1:], val) + (mid + 1)
-    return binary_search_recursion(lst[:mid], val)
-
+    elif (val < lst[mid]):
+        return binary_search_recursion(lst[:mid], val)
 print(binary_search_recursion(list, 59))
